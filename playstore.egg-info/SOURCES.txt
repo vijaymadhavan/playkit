@@ -1,0 +1,7 @@
+setup.py
+playstore.egg-info/.DS_Store
+playstore.egg-info/PKG-INFO
+playstore.egg-info/SOURCES.txt
+playstore.egg-info/dependency_links.txt
+playstore.egg-info/requires.txt
+playstore.egg-info/top_level.txt

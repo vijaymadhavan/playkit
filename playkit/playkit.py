@@ -17,5 +17,5 @@ def getapps(keyword=""):
     	appcontent["description"] = app.find("div", {"class":"description"}).getText()
     	appcontent["rating"] = app.find("div", {"class":"tiny-star star-rating-non-editable-container"})["aria-label"]
     	appcontent["price"] = app.findAll("span", {"class":"display-price"})[0].getText()
-    	app_list.append(appcontent)
+    	appList.append(appcontent)
     return appList
