@@ -8,7 +8,7 @@ def getapps(keyword=""):
     response = BeautifulSoup(response.text, 'html.parser')
 
     apps = response.find("div", { "class" : "card-list two-cards" }).findAll("div", { "class" : "card-content id-track-click id-track-impression" })
-    app_list = []
+    appList = []
     for app in apps:
     	appcontent = {}
     	appcontent["name"] = app.find("a", {"class":"title"})["title"]
@@ -18,4 +18,4 @@ def getapps(keyword=""):
     	appcontent["rating"] = app.find("div", {"class":"tiny-star star-rating-non-editable-container"})["aria-label"]
     	appcontent["price"] = app.findAll("span", {"class":"display-price"})[0].getText()
     	app_list.append(appcontent)
-    return app_list
+    return appList
