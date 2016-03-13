@@ -28,7 +28,7 @@ To install playkit, simply:
 
 Advanced Usage
 ------------
-#### category support ####
+#### Category support ####
 
     >>> response = playkit.api(keyword="facebook",category="apps")
 
