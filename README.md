@@ -32,7 +32,7 @@ Advanced Usage
 
     >>> response = playkit.api(keyword="facebook",category="apps")
 
-  #### Proxy support ####
+#### Proxy support ####
     
     
     >>> proxies = {'http': 'http://10.10.1.10:3128','https': 'http://10.10.1.10:1080'}
