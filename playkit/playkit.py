@@ -23,7 +23,10 @@ def api(keyword="",category="apps",format="dict",proxies=None):
             result["id"] = content.find("span", {"class":"preview-overlay-container"})["data-docid"]
             result["developer"] = content.find("a", {"class":"subtitle"})["title"]
             result["description"] = content.find("div", {"class":"description"}).getText()
-            result["rating"] = content.find("div", {"class":"tiny-star star-rating-non-editable-container"})["aria-label"]
+            try:
+                result["rating"] = content.find("div", {"class":"tiny-star star-rating-non-editable-container"})["aria-label"]
+            except TypeError:
+                result["rating"] = "Not rated"
             result["price"] = content.findAll("span", {"class":"display-price"})[0].getText()
             result["largeImageUrl"] = content.find("img", {"class":"cover-image"})["data-cover-large"]
             result["smallImageUrl"] = content.find("img", {"class":"cover-image"})["data-cover-small"]
