@@ -28,11 +28,11 @@ To install playkit, simply:
 
 Advanced Usage
 ------------
-Markup :  #### category support ####
+#### category support ####
 
     >>> response = playkit.api(keyword="facebook",category="apps")
 
-Markup :  #### Proxy support ####
+  #### Proxy support ####
     
     
     >>> proxies = {'http': 'http://10.10.1.10:3128','https': 'http://10.10.1.10:1080'}
