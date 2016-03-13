@@ -5,7 +5,6 @@ Playkit: A lightweight bridge api for google playstore
 Usage
 ------------
 
-.. code-block:: python
     
     >>> from playkit import playkit
     >>> playkit.api(keyword="facebook")
@@ -17,7 +16,6 @@ Installation
 
 To install playkit, simply:
 
-.. code-block:: bash
 
     $ pip install playkit
     ✨🍰✨
