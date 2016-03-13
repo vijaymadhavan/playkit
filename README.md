@@ -2,7 +2,7 @@ Playkit: A lightweight bridge api for google playstore
 =========================
 
 
-Usage
+BasicUsage
 ------------
 
     
@@ -26,3 +26,16 @@ To install playkit, simply:
     $ pip install playkit
     ✨🍰✨
 
+Advanced Usage
+------------
+Markup :  #### category support ####
+
+    >>> response = playkit.api(keyword="facebook",category="apps")
+
+Markup :  #### Proxy support ####
+    
+    
+    >>> proxies = {'http': 'http://10.10.1.10:3128','https': 'http://10.10.1.10:1080'}
+    >>> response = playkit.api(keyword="facebook",proxies=proxies)
+    
+for more info on proxies see [requests](http://docs.python-requests.org/en/master/user/advanced/#proxies)
