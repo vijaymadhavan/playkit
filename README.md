@@ -6,8 +6,8 @@ BasicUsage
 ------------
 
     
-    >>> from playkit import playkit
-    >>> response = playkit.api(keyword="facebook")
+    >>> from playkit import api
+    >>> response = api.search(keyword="facebook")
     >>> apps = response["results"]
     >>> apps[0]
     >>> {'rating': u'Rated 4.0 stars out of five stars', 'largeImageUrl': u'//lh3.googleusercontent.com/ZZPdzvlpK9r_Df9C3M7j1rNRi7hhHRvPhlklJ3lfi5jk86Jd1s0Y5wcQ1QgbVaAP5Q=w340', 
