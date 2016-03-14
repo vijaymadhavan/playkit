@@ -1,8 +1,10 @@
 import requests
+
 from bs4 import BeautifulSoup
 
-def api(keyword="",category="apps",format="dict",proxies=None):
-    
+
+def search(keyword="",category="apps",format="dict",proxies=None):
+    requests.packages.urllib3.disable_warnings()
     response = {"status":"OK","error":None,"results":[]}
     payload = {'q': keyword, 'c': category}
     
