@@ -1,6 +1,6 @@
 setup.py
 playkit/__init__.py
-playkit/playkit.py
+playkit/api.py
 playkit.egg-info/.DS_Store
 playkit.egg-info/PKG-INFO
 playkit.egg-info/SOURCES.txt
