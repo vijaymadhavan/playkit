@@ -42,7 +42,7 @@ Advanced Usage
 #### Rating ####
 
     >>> response = playkit.api(keyword="facebook",category="apps",rating="4+") # rating can also have value "all"
-    default=all
+    default="all"
     
 
 #### Proxy support ####
