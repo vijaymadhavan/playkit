@@ -30,7 +30,20 @@ Advanced Usage
 ------------
 #### Category support ####
 
-    >>> response = playkit.api(keyword="facebook",category="apps")
+    >>> response = playkit.api(keyword="facebook",category="apps") # to search apps
+    
+    >>> response = playkit.api(keyword="facebook",category="books") # to search books
+    
+#### Pricing ####
+
+    >>> response = playkit.api(keyword="facebook",category="apps",pricing="free") # other values for pricing are "paid" and "all"
+    default="all"
+    
+#### Rating ####
+
+    >>> response = playkit.api(keyword="facebook",category="apps",rating="4+") # rating can also have value "all"
+    default="all"
+    
 
 #### Proxy support ####
     
