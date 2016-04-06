@@ -25,7 +25,7 @@ def search(keyword="",category="apps",pricing="all",rating="all",format="dict",p
         
         htmlresponse = BeautifulSoup(htmlresponse.text, 'html.parser')
 
-        contents = htmlresponse.find("div", { "class" : "card-list two-cards" }).findAll("div", { "class" : "card-content id-track-click id-track-impression" })
+        contents = htmlresponse.find("div", { "class" : "id-card-list card-list two-cards" }).findAll("div", { "class" : "card-content id-track-click id-track-impression" })
         
         for content in contents:
             result = {}
@@ -46,4 +46,5 @@ def search(keyword="",category="apps",pricing="all",rating="all",format="dict",p
             response["error"] = e
             response["status"] = "Failed"
             return response
+
 
