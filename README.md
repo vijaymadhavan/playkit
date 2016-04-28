@@ -50,7 +50,9 @@ Advanced Usage
 
     >>> response = api.search(keyword="facebook",category="apps",rating="4+") # rating can also have value "all"
     default="all"
-    
+### Country Support ###
+    >>> response = api.search(keyword="facebook",category="apps",country="us") # "us" is short for united states 
+    default="all"
 
 #### Proxy support ####
     
