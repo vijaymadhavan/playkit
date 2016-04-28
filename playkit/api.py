@@ -25,12 +25,7 @@ def search(keyword="",category="apps",country="us",pricing="all",rating="all",fo
         
         htmlresponse = BeautifulSoup(htmlresponse.text, 'html.parser')
 
-        try:
-            contents = htmlresponse.find("div", { "class" : "id-card-list card-list two-cards" }).findAll("div", { "class" : "card-content id-track-click id-track-impression" })
-        except AttributeError,e:
-            print 'only one item to be listed'
-            print e
-            contents = htmlresponse.find("div", { "class" : "id-card-list card-list one-card" }).findAll("div", { "class" : "card-content id-track-click id-track-impression" })
+        contents = htmlresponse.find("div", { "class" : "id-card-list card-list" }).findAll("div", { "class" : "card-content id-track-click id-track-impression" })
         
         for content in contents:
             result = {}
