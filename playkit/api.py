@@ -25,7 +25,12 @@ def search(keyword="",category="apps",country="us",pricing="all",rating="all",fo
         
         htmlresponse = BeautifulSoup(htmlresponse.text, 'html.parser')
 
-        contents = htmlresponse.find("div", { "class" : "id-card-list card-list two-cards" }).findAll("div", { "class" : "card-content id-track-click id-track-impression" })
+        try:
+            contents = htmlresponse.find("div", { "class" : "id-card-list card-list two-cards" }).findAll("div", { "class" : "card-content id-track-click id-track-impression" })
+        except AttributeError,e:
+            print 'only one item to be listed'
+            print e
+            contents = htmlresponse.find("div", { "class" : "id-card-list card-list one-card" }).findAll("div", { "class" : "card-content id-track-click id-track-impression" })
         
         for content in contents:
             result = {}
@@ -47,7 +52,7 @@ def search(keyword="",category="apps",country="us",pricing="all",rating="all",fo
             response["status"] = "Failed"
             return response
 
-def appdetails(identifier="",category="apps",format="dict",proxies=None):
+def appdetails(identifier="",format="dict",proxies=None):
     requests.packages.urllib3.disable_warnings()
     response = {"status":"OK","error":None,"results":{}}
     try:
@@ -58,16 +63,15 @@ def appdetails(identifier="",category="apps",format="dict",proxies=None):
 
 
     
-    url = "https://play.google.com/store/"+category+"/details?"
+    url = "https://play.google.com/store/apps/details?"
     try:
         if proxies:
             htmlresponse = requests.get(url,params = payload,proxies=proxies)
         else:
             htmlresponse = requests.get(url,params = payload)
-        
+        result = {}
         htmlresponse = BeautifulSoup(htmlresponse.text, 'html.parser')
         contents = htmlresponse.find("div", { "class" : "details-wrapper apps square-cover id-track-partial-impression id-deep-link-item" })        
-        result = {}
         result["id"] = contents["data-docid"]
         result["name"] =  contents.find("div",{"class":"document-title"}).getText()
         price =  contents.find("meta",{"itemprop":"price"})["content"].replace(u'\xa0',u' ')
